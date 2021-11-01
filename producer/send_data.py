@@ -13,6 +13,37 @@ import requests
 from copy import deepcopy
 from bs4 import BeautifulSoup
 
+def searchnews(searchstr):
+    sleep(15)
+    BROKER = os.getenv('BROKER', 'localhost:9092')
+    TOPICS = ['news','tech','business']
+    sleep(15)
+    
+    try:
+        producer = KafkaProducer(bootstrap_servers=BROKER)
+    except Exception as e:
+        print(f"ERROR --> {e}")
+        sys.exit(1)
+    mongo_url = os.getenv('ME_CONFIG_MONGODB_URL', 'mongodb://root:example@mongo:27017/')
+    db_name = 'newsclassifier'
+    collection_name = 'producer_collection_newsclassifier'
+    # establishing the connection
+    mydb = mongo_db_connect(mongo_url, db_name)
+    mycol=mongo_db_create_collection(mydb, collection_name)
+    inputparms=str(searchstr)
+    api_response_data = rapidapi_response(inputparms)
+    for article in api_response_data['articles']:
+        article = {"title":article['title'],
+                   "published_date":article['published_date'],
+                   "summary":article['summary'],
+                   "topic":article['topic'],
+                   "source":article['link']
+                   }
+    mongo_document = deepcopy(article)
+    mongo_db_insert(mycol, mongo_document)  
+    if article["topic"] in TOPICS:
+        producer.send(article["topic"],json.dumps(article, default=json_util.default).encode('utf-8'))
+
 def rssfeed():
     data={}
     news_items = []

@@ -9,6 +9,7 @@ from pyspark.sql.functions import *
 from pyspark.sql import SparkSession
 import pyspark.sql.types as tp 
 from TrainModelUtility import train_model
+from producer.send_data import searchnews
 import os
 
 app = Flask(__name__)
@@ -155,6 +156,15 @@ def trainmodel():
 	todosnew_l={'Category':'Trained model successfully.'}
 	todos_l = todos.find()
 	return render_template('index.html',a1=a1,todos=todos_l,todos_new=todosnew_l,t=title,h=heading)
+
+@app.route("/ingest")
+def ingestdata():
+  a1="active"
+  searchstring=str(request.values.get("url"))
+  searchnews(searchstring)
+  todosnew_l={'Category':'Data Ingestion Service completed successfully.'}
+  todos_l = todos.find().sort("date",-1)
+  return render_template('index.html',a1=a1,todos=todos_l,todos_new=todosnew_l,t=title,h=heading)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',debug=True)
