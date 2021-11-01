@@ -55,11 +55,11 @@ Installation How-to?
 	4. The current implementation was only tested on Ubuntu 20.04.
 	
 Below is the highlevel architecture diagram of the application:
-![Architecture](https://github.com/iamphani/News-Article-Classifier/blob/main/documents/Week4/DataIngestion.drawio/NewClassifierArchitecture.png)
+![Architecture](https://github.com/iamphani/NewsArticleClassifier/blob/main/documents/Week4/DataIngestion.drawio/NewClassifierArchitecture.png)
 
 Below are the sample sequence diagrams:
-![Training](https://github.com/iamphani/News-Article-Classifier/blob/main/documents/Week4/Sequence/Sequence-Diagrams/training-news-sequence-diagram.png)
-![Predict_news](https://github.com/iamphani/News-Article-Classifier/blob/main/documents/Week4/Sequence/Sequence-Diagrams/predict-news-sequence-diagram.png)
+![Training](https://github.com/iamphani/NewsArticleClassifier/blob/main/documents/Week4/Sequence/Sequence-Diagrams/training-news-sequence-diagram.png)
+![Predict_news](https://github.com/iamphani/NewsArticleClassifier/blob/main/documents/Week4/Sequence/Sequence-Diagrams/predict-news-sequence-diagram.png)
 
 Below are some of the sample output screens:
 ![Prediction1](https://github.com/iamphani/NewsArticleClassifier/blob/main/documents/Week4/screenshots/SuccessPrediction.PNG)
