@@ -59,7 +59,7 @@ Below is the highlevel architecture diagram of the application:
 
 Below are the sample sequence diagrams:
 ![Training](https://github.com/iamphani/News-Article-Classifier/blob/main/documents/Week4/Sequence/Sequence-Diagrams/training-news-sequence-diagram.png)
-![Predict_news](https://github.com/samplepython/News-Article-Classifier/blob/main/documents/Week4/Sequence/Sequence-Diagrams/predict-news-sequence-diagram.png)
+![Predict_news](https://github.com/iamphani/News-Article-Classifier/blob/main/documents/Week4/Sequence/Sequence-Diagrams/predict-news-sequence-diagram.png)
 
 Below are some of the sample output screens:
 ![Prediction1](https://github.com/iamphani/NewsArticleClassifier/blob/main/documents/Week4/screenshots/SuccessPrediction.PNG)
