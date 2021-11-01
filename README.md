@@ -61,8 +61,11 @@ Below are the sample sequence diagrams:
 ![Training](https://github.com/iamphani/NewsArticleClassifier/blob/main/documents/Week4/Sequence/Sequence-Diagrams/training-news-sequence-diagram.png)
 ![Predict_news](https://github.com/iamphani/NewsArticleClassifier/blob/main/documents/Week4/Sequence/Sequence-Diagrams/predict-news-sequence-diagram.png)
 
+Once the docker compose up is ran it will give an url for the flask web UI on the console. This is generated dynamically. So, please take the URL from the console and paste it in the browse. 
 Below are some of the sample output screens:
+
 ![Prediction1](https://github.com/iamphani/NewsArticleClassifier/blob/main/documents/Week4/screenshots/SuccessPrediction.PNG)
+
 ![Prediction2](https://github.com/iamphani/NewsArticleClassifier/blob/main/documents/Week4/screenshots/retrain.PNG)
 
 
