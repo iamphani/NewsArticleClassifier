@@ -12,6 +12,7 @@ import sys
 import requests
 from copy import deepcopy
 from bs4 import BeautifulSoup
+from db_utils import mongo_db_connect, mongo_db_create_collection, mongo_db_insert
 
 def searchnews(searchstr):
     sleep(15)
@@ -30,8 +31,9 @@ def searchnews(searchstr):
     # establishing the connection
     mydb = mongo_db_connect(mongo_url, db_name)
     mycol=mongo_db_create_collection(mydb, collection_name)
-    inputparms=str(searchstr)
+    inputparms={"q": searchstr, "lang": 'en'}
     api_response_data = rapidapi_response(inputparms)
+    print(api_response_data)
     for article in api_response_data['articles']:
         article = {"title":article['title'],
                    "published_date":article['published_date'],
